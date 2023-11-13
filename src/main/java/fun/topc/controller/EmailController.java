@@ -27,6 +27,15 @@ public class EmailController {
         this.service = service;
     }
 
+    /**
+     * @Title: code
+     * @Description: 获取验证码的服务
+     * @param emailDTO
+     * @return: Result<String>
+     * @throws: EmailException
+     * @author: Eric
+     * @Date: 2023/11/13 17:16
+     */
     @PostMapping("/code")
     public Result<String> code(@RequestBody EmailDTO emailDTO) throws EmailException {
         service.sendCode(emailDTO.getEmail());

@@ -25,38 +25,21 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class SpringConfig {
 
-    // 配置jdbc
+    /**
+     * @Title: jdbcTemplate
+     * @Description: 配置jdbc的Bean，但是该类并不会真正使用，可以用来测试一些数据库的表操作
+     * @param dataSource
+     * @return: JdbcTemplate
+     * @throws: 
+     * @author: Eric
+     * @Date: 2023/11/13 20:27
+     */
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(dataSource);
         jdbcTemplate.setQueryTimeout(3000);
         return jdbcTemplate;
-    }
-
-    // 配置数据库的数据源
-    @Bean
-    public DataSource dataSource() {
-        InputStream inputStream = null;
-        Properties properties = new Properties();
-        try {
-            inputStream = getClass().getClassLoader().getResourceAsStream("jdbc.properties");
-            properties.load(inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            if (inputStream != null) {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.configFromPropety(properties);
-        return druidDataSource;
     }
 
     @Bean

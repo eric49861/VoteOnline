@@ -1,7 +1,6 @@
 package fun.topc.service;
 
 import com.google.common.cache.LoadingCache;
-import fun.topc.exception.CodeNotEqualException;
 import fun.topc.service.impl.IEmailService;
 import fun.topc.util.EmailUtil;
 import org.apache.commons.mail.EmailException;
