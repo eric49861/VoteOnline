@@ -1,7 +1,7 @@
-package fun.topc.service;
+package fun.topc.service.impl;
 
 import com.google.common.cache.LoadingCache;
-import fun.topc.service.impl.IEmailService;
+import fun.topc.service.IEmailService;
 import fun.topc.util.EmailUtil;
 import org.apache.commons.mail.EmailException;
 import org.springframework.beans.factory.annotation.Autowired;

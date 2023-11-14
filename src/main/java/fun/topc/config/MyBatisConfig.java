@@ -3,12 +3,14 @@ package fun.topc.config;
 import com.alibaba.druid.pool.DruidDataSource;
 
 import fun.topc.mapper.UserMapper;
+import fun.topc.mapper.VoteMapper;
 import org.apache.ibatis.logging.stdout.StdOutImpl;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.apache.ibatis.session.SqlSessionFactory;
+
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
@@ -98,6 +100,13 @@ public class MyBatisConfig {
     public UserMapper userMapper(SqlSessionFactory factory) {
         SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(factory);
         UserMapper mapper = sqlSessionTemplate.getMapper(UserMapper.class);
+        return mapper;
+    }
+
+    @Bean
+    public VoteMapper voteMapper(SqlSessionFactory factory) {
+        SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(factory);
+        VoteMapper mapper = sqlSessionTemplate.getMapper(VoteMapper.class);
         return mapper;
     }
 }

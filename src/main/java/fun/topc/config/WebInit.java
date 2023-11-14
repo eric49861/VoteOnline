@@ -16,7 +16,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class WebInit extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] {SpringConfig.class};
+        return new Class[] {SpringConfig.class, MyBatisConfig.class};
     }
 
     @Override

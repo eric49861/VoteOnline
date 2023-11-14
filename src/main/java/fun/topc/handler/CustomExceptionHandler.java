@@ -2,6 +2,7 @@ package fun.topc.handler;
 
 import fun.topc.dto.Result;
 import org.apache.commons.mail.EmailException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -20,5 +21,11 @@ public class CustomExceptionHandler {
     public Result<String> emailExceptionHandler(EmailException e) {
         System.out.println(e.getMessage());
         return Result.fail(HttpStatus.BAD_REQUEST.value(), "验证码获取失败, 请稍后重试");
+    }
+
+    @ExceptionHandler(value = DataAccessException.class)
+    public Result<String> dataAccessException(DataAccessException e) {
+        System.out.println(e.getMessage());
+        return Result.fail(HttpStatus.INTERNAL_SERVER_ERROR.value(), "发生未知错误");
     }
 }

@@ -2,8 +2,7 @@ package fun.topc.controller;
 
 import fun.topc.dto.EmailDTO;
 import fun.topc.dto.Result;
-import fun.topc.service.EmailService;
-import fun.topc.service.impl.IEmailService;
+import fun.topc.service.IEmailService;
 import org.apache.commons.mail.EmailException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

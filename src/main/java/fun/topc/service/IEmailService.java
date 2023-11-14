@@ -1,4 +1,4 @@
-package fun.topc.service.impl;
+package fun.topc.service;
 
 import fun.topc.exception.CodeNotEqualException;
 import org.apache.commons.mail.EmailException;

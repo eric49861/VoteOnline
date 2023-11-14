@@ -8,5 +8,5 @@ package fun.topc.constant;
  * 创建时间：2023年11月11日 21:20
  */
 public enum Sex {
-    MALE, FEMALE, UNKNOWN
+    FEMALE, MALE, UNKNOWN
 }

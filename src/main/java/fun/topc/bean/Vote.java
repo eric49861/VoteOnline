@@ -19,9 +19,10 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class Vote {
     private Integer id;
+    private Integer userId;
     private String topic;
-    private Timestamp startDate;
-    private Timestamp endDate;
+    private Timestamp startAt;
+    private Timestamp endAt;
     private String options;
     private String desc;
     // 该投票活动的链接

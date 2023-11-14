@@ -19,4 +19,7 @@ public interface UserMapper {
 
     @Insert("INSERT INTO user VALUES(NULL, #{email}, #{password})")
     void insertUser(@Param("email") String email, @Param("password") String password);
+
+    @Select("SELECT COUNT(*) FROM user WHERE email = #{email}")
+    int selectCountByEmail(@Param("email") String email);
 }

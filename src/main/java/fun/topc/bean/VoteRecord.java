@@ -1,5 +1,6 @@
 package fun.topc.bean;
 
+import fun.topc.constant.Sex;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,9 +19,13 @@ import lombok.NoArgsConstructor;
 public class VoteRecord {
     private Integer id;
     // 投票主题的id
-    private Integer vote_id;
-    // 参与者的id
-    private Integer participant_id;
+    private Integer voteId;
+    // 参与者的信息
+    private String ip;
+    private String location;//通过解析用户的ip获取地理位置
+    private Integer age;
+    private Sex sex;
+    private String occupation;
     // 参与者投票的选项
     private Integer result;
 }

@@ -20,8 +20,8 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VoteDTO {
-    @JsonProperty("id")
-    private Integer id;
+    @JsonProperty("userId")
+    private Integer userId;
     @NotNull
     @JsonProperty("topic")
     private String topic;
